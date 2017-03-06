@@ -1,15 +1,16 @@
 import React from 'react';
 import reactCSS from 'reactcss'
+
 class App extends React.Component {
  constructor() {
   super();
   this.state = {
-   name : "Find People",
+   inputValue : "Find People",
   }
  }
 changeInput(e){
   this.setState({
-    name : e.target.value
+    inputValue : e.target.value
   })
  }
 
@@ -29,7 +30,7 @@ render() {
         color: '#B4B4B4',
         display: 'block',
         margin: 'auto',
-        minWidth: '100%',
+        width: '100%',
         WebkitAppearance: 'none',
         appearance: 'none',
         border: 'none',
@@ -58,8 +59,8 @@ render() {
       },
       inputSpan: {
         display: 'inline-block',
+        width: '100%',
         position: 'relative',
-        background: 'none',
         padding: '10px',
         left: '-50%',
         float: 'left',
@@ -70,13 +71,17 @@ render() {
 
  return (
   <div style={ styles.inputContainer }>
-   <input style={ styles.input } type="text" placeholder={this.state.name} onChange={this.changeInput.bind(this)}/>
-   <div style={ styles.inputSpanCenter }>
-    <span style={ styles.inputSpan }>
-      <img style={ styles.img } src={'./img/search.svg'}></img>
-      {this.state.name}</span>
+
+    <input style={ styles.input } type="text" placeholder={this.state.inputValue} onChange={this.changeInput.bind(this)}/>
+
+    <div style={ styles.inputSpanCenter }>
+      <span style={ styles.inputSpan }>
+        <img style={ styles.img } src={'./img/search.svg'}></img>
+        {this.state.inputValue}
+      </span>
+    </div>
+
    </div>
- </div>
  );
  }
 }
