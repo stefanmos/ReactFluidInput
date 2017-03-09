@@ -18,8 +18,8 @@ render() {
 
   const styles = reactCSS({
     'default': {
-      inputContainer: {
-        background: 'none',
+      inputBox: {
+
       },
       input: {
         position: 'relative',
@@ -38,9 +38,8 @@ render() {
         background: 'none',
         zIndex: 2,
       },
-      img: {
+      inputImg: {
         position: 'absolute',
-        float: 'left',
         width: 30,
         height: 30,
         marginTop: 5,
@@ -70,17 +69,17 @@ render() {
   });
 
  return (
-  <div style={ styles.inputContainer }>
 
+  // Comments
+
+  <div style={ styles.inputBox }>
     <input style={ styles.input } type="text" placeholder={this.state.inputValue} onChange={this.changeInput.bind(this)}/>
-
     <div style={ styles.inputSpanCenter }>
       <span style={ styles.inputSpan }>
-        <img style={ styles.img } src={'./img/search.svg'}></img>
+        <img style={ styles.inputImg } src={'./img/search.svg'}></img>
         {this.state.inputValue}
       </span>
     </div>
-
    </div>
  );
  }
