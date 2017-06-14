@@ -1,19 +1,17 @@
+var path = require('path');
+
 module.exports = {
   entry: './main.js',
   output: {
-    path: './',
+    path: path.resolve(__dirname, './'),
     filename: 'index.js'
   },
-  devServer: {
-    inline: true,
-    port: 8080
-  },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel'
+				test: /\.(js|jsx)$/,
+				exclude: /node_modules/,
+				loader: "babel-loader"
       }
     ]
   }
